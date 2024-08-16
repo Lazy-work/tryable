@@ -19,7 +19,7 @@ if (error) {
 // handle the success
 ```
 
-## 
+## Factorization
 
 ```ts
 const computation = $try((a: number, b: number) => {
@@ -29,6 +29,7 @@ const computation = $try((a: number, b: number) => {
 
 const [result, error] = computation(2, 3);
 
+// The error is typed
 if (error) {
   // handle the error
 }
