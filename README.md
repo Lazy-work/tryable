@@ -30,7 +30,7 @@ async function asyncComputation(a: number, b: number) {
 const [result, error] = await $try(asyncComputation)(2, 3);
 
 // With type error
-const [result, error] = $try(asyncComputation)<CustomError>(2, 3);
+const [result, error] = await $try(asyncComputation)<CustomError>(2, 3);
 
 if (error) {
   // handle the error
