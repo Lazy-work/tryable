@@ -19,6 +19,25 @@ if (error) {
 // handle the success
 ```
 
+## Async
+
+```ts
+async function asyncComputation(a: number, b: number) {
+  if (Math.random() > 0.5) throw new CustomError('failed computation');
+  return a + b
+}
+
+const [result, error] = await $try(asyncComputation)(2, 3);
+
+// With type error
+const [result, error] = $try(asyncComputation)<CustomError>(2, 3);
+
+if (error) {
+  // handle the error
+}
+// handle the success
+```
+
 ## Factorization
 
 ```ts
@@ -35,6 +54,8 @@ if (error) {
 }
 // handle the success
 ```
+
+
 
 ## Source code
 
